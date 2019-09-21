@@ -25,9 +25,12 @@ var getMaxElement = function (arr) {
   return maxElement;
 };
 
+var getRandomInteger = function (min, max) {
+  return Math.floor(min + Math.random() * (max - min + 1));
+};
+
 var getBlueWithRandomSaturation = function() {
-  var colorColumn = 'hsl(240, 100%, ' + Math.floor(Math.random() * 100) + '%'  + ')';
-  return colorColumn;
+  return 'hsl(240,' + getRandomInteger(0, 100) + '%, 50%)';
 }
 
 window.renderStatistics = function (ctx, names, times) {
