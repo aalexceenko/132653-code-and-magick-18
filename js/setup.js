@@ -6,15 +6,11 @@ var EYES = ['black', 'red', 'lue', 'yellow', 'green'];
 var NAMES = ['Иван', 'Хуан', 'Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
 var SURNAMES = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
 
-var getRandomElement = function (arr) {
-  return arr[window.getRandomInteger(0, arr.length - 1)];
-};
-
 var generateWizardWithRandomOptions = function () {
   return {
-    name: getRandomElement(NAMES) + ' ' + getRandomElement(SURNAMES),
-    coatColor: getRandomElement(COLORS),
-    eyesColor: getRandomElement(EYES),
+    name: window.getRandomElement(NAMES) + ' ' + window.getRandomElement(SURNAMES),
+    coatColor: window.getRandomElement(COLORS),
+    eyesColor: window.getRandomElement(EYES),
   };
 };
 

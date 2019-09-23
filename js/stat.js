@@ -15,22 +15,8 @@ var renderCloud = function (ctx, x, y, color) {
   ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
 };
 
-var getMaxElement = function (arr) {
-  var maxElement = arr[0];
-  for (var i = 1; i < arr.length; i++) {
-    if (maxElement < arr[i]) {
-      maxElement = arr[i];
-    }
-  }
-  return maxElement;
-};
-
-var getRandomInteger = function (min, max) {
-  return Math.floor(min + Math.random() * (max - min + 1));
-};
-
 var getBlueWithRandomSaturation = function () {
-  return 'hsl(240,' + getRandomInteger(0, 100) + '%, 50%)';
+  return 'hsl(240,' + window.getRandomInteger(0, 100) + '%, 50%)';
 };
 
 window.renderStatistics = function (ctx, names, times) {
@@ -42,7 +28,7 @@ window.renderStatistics = function (ctx, names, times) {
   ctx.fillText('Список результатов:', CLOUD_X + GAP * 2, DISTANATION + GAP);
   ctx.font = 'PT Mono 16px';
 
-  var maxTime = getMaxElement(times);
+  var maxTime = window.getMaxElement(times);
 
   for (var i = 0; i < names.length; i++) {
     ctx.fillStyle = '#000';
