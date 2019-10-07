@@ -52,11 +52,13 @@ setupOpen.addEventListener('keydown', function (evt) {
 
 setupClose.addEventListener('click', function () {
   closePopup();
+  window.change();
 });
 
 setupClose.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER_KEYCODE) {
     closePopup();
+    window.change();
   }
 });
 
@@ -77,7 +79,6 @@ for (var i = 0; i < WIZARDS_COUNT; i++) {
 }
 
 
-// var wizardCoat = document.querySelector('.setup-player');
 document.querySelector('.wizard-coat').addEventListener('click', function () {
   document.querySelector('.wizard-coat').style = 'fill:' + window.getRandomElement(COLORS);
 });
