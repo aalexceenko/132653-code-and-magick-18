@@ -31,10 +31,11 @@
     document.removeEventListener('mouseup', onMouseUp);
 
     if (window.dragged) {
-      onClickPreventDefault(evt);
+      dialogHandler.addEventListener('click', onClickPreventDefault);
     }
 
   };
+
   var onClickPreventDefault = function (evt) {
     evt.preventDefault();
     dialogHandler.removeEventListener('click', onClickPreventDefault);
@@ -50,12 +51,6 @@
     };
 
     window.dragged = false;
-
-
-    onMouseMove(evt);
-    onClickPreventDefault(evt);
-    onMouseUp(evt);
-
 
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', onMouseUp);
